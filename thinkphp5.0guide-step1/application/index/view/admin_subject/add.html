@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+
+<head>
+    <meta charset="UTF-8">
+    <title>添加数据</title>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- 菜单导航 -->
+                    <nav class="navbar navbar-default" role="navigation">
+                        <div class="container-fluid">
+                            <div class="navbar-header">
+                                <a class="navbar-brand" href="#">梦云智</a>
+                            </div>
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav">
+                                    <li class="active"><a href="{:url('admin_subject/index')}">科目管理</a></li>
+                                    <li ><a href="{:url('admin_accountant/index')}">会计管理</a></li>
+                                </ul>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a href="{:url('admin_center/center')}"><i class="glyphicon glyphicon-user" style="position: relative;top: 2px;"></i>个人中心</a></li>
+                                    <li><a href="{:url('Login/logout')}">注销</a></li>
+                                </ul>
+                            </div>
+                            <!-- /.navbar-collapse -->
+                        </div>
+                        <!-- /.container-fluid -->
+                    </nav>
+                </div>
+            </div>
+    <!-- /菜单导航 -->
+        <hr />
+            <form action="{:url('save')}" method="post" class="form-inline">
+                <label>科目:</label>
+                <input type="text" name="name"  class="form-control" />
+                <label>  资金:</label>
+                <input type="text" name="money" class="form-control" />
+                <button type="submit" class="form-control btn-default btn-primary">保存</button>
+                <a href="{:url('index')}"><button type="button"  class="form-control btn btn-default">取消</button></a>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
