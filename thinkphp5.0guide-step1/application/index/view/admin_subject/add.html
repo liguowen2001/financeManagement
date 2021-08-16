@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <title>添加数据</title>
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/thinkphp5/public/static/bootstrap-3.3.5-dist/css/bootstrap.min.css">
 </head>
 
-<body class="container">
-    <div class="row">
+<body>
+    <div class="row" >
+        
         <div class="col-md-12">
             <!-- 菜单导航 -->
                     <nav class="navbar navbar-default" role="navigation">
@@ -33,18 +35,45 @@
                     </nav>
                 </div>
             </div>
-    <!-- /菜单导航 -->
-        <hr />
-            <form action="{:url('save')}" method="post" class="form-inline">
-                <label>科目:</label>
-                <input type="text" name="name"  class="form-control" />
-                <label>  资金:</label>
-                <input type="text" name="money" class="form-control" />
-                <button type="submit" class="form-control btn-default btn-primary">保存</button>
-                <a href="{:url('index')}"><button type="button"  class="form-control btn btn-default">取消</button></a>
-            </form>
+        <div class="col-md-3"></div>
+        <div class="col-md-6" >
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="container-fluid">
+                    <div style="margin-top: 100px;">          
+                        <form class="form-horizontal" action="{:url('save')}" method="post">
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <div class="col-md-3"></div>
+                                <div class="col-md-6">
+                                    <label class="col-sm-5 control-label" style="font-size: 20px;">科目:</label>
+                                    <input type="text" name="name"  class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <div class="col-md-3"></div>
+                                <div class="col-md-6">
+                                    <label class="col-sm-5 control-label" style="font-size: 20px;">资金:</label>
+                                    <input type="text" name="money" class="form-control" />
+                                </div>
+                            </div>
+                            <br>
+                            <div style="margin-left: auto;margin-right: auto; width: 80px">
+                                <div class="form-group " >
+                                    <button type="submit" class="form-control btn-default btn-primary">保存</button>
+                                    <a href="{:url('index')}"><button type="button"  class="form-control btn btn-default">取消</button></a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </nav>
         </div>
     </div>
-</body>
+    </body>
+
+
+
+
+
 
 </html>

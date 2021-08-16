@@ -19,7 +19,7 @@ class AdminSubjectController extends Index
 
             // 定制查询信息
             if (!empty($name)) {
-                $Subject->where('name', $name);
+                $Subject->where('name', 'like', '%' . $name . '%');
             }
 
             // 按条件查询数据并调用分页

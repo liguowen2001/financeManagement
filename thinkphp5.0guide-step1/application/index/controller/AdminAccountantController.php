@@ -165,4 +165,30 @@ class AdminAccountantController extends Index
         }
         return $this->error($message);
     }
+    //重置密码
+    public function resentPassword()
+    {
+        try{
+            //接收id
+            $id=Request::instance()->param('id/d');
+            if(is_null($id)||0===$id){
+                throw new \Exception('未获取到ID信息', 1);
+            }
+            //获取对应的Student
+            if (null===$Accountant=Accountant::get($id)) {
+                return $this->error('系统未找到ID为' . $id . '的记录');
+            }
+            //重置密码
+            $Accountant->password=123456;
+            //保存
+            $Accountant->save();
+            return $this->success('操作成功 密码重置为 123456', url('index'));
+        }catch(\think\Exception\HttpResponseException $e){
+            throw $e;
+        }catch(\Exception $e){
+            return $e->getMessage();
+        }
+        
+        
+    }
 }

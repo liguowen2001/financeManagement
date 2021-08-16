@@ -15,7 +15,7 @@ class Accountant extends Model
         $id = session('id');
         $tag=session('tag'); 
         // isset()和is_null()是一对反义词
-        if (isset($id)&&$tag==1) {
+        if (isset($id)&&$tag==2) {
             return true;
         } else {
             return false;

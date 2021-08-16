@@ -19,11 +19,11 @@
                             <!-- Collect the nav links, forms, and other content for toggling -->
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav">
-                                    <li class="active"><a href="{:url('admin_subject/index')}">科目管理</a></li>
-                                    <li ><a href="{:url('admin_accountant/index')}">会计管理</a></li>
+                                    <li ><a href="{:url('accountant/index')}">账单管理</a></li>
+                                    <li class="active"><a href="{:url('accountant_subject/index')}">科目管理</a></li>
                                 </ul>
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li><a href="{:url('admin_center/center')}"><i class="glyphicon glyphicon-user" style="position: relative;top: 2px;"></i>个人中心</a></li>
+                                    <li><a href="{:url('accountant_center/center')}"><i class="glyphicon glyphicon-user" style="position: relative;top: 2px;"></i>个人中心</a></li>
                                     <li><a href="{:url('Login/logout')}">注销</a></li>
                                 </ul>
                             </div>
@@ -45,9 +45,6 @@
                         <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i>&nbsp;查询</button>
                     </form>
                 </div>
-                <div class="col-md-4 text-right">
-                    <a href="{:url('add')}" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i>&nbsp;增加</a>
-                </div>
             </div>
             <hr />
             <table class="table table-hover table-bordered">
@@ -55,17 +52,12 @@
                     <th>序号</th>
                     <th>科目</th>
                     <th>资金(元)</th>
-                    <th>操作</th>
                 </tr>
                 {volist name='subjects' id='subject' key='key'}
                 <tr >
                     <td>{$key}</td>
                     <td>{$subject->name}</td>
                     <td>{$subject->money}</td>
-                    <td>
-                        <a class="btn btn-primary" href="{:url('edit?id=' . $subject->getData('id'))}"><i class="glyphicon glyphicon-pencil"></i>&nbsp;编辑</a>         
-                        <a class="btn btn-danger" href="{:url('delete?id='.$subject->id)}"><i class="glyphicon glyphicon-trash"></i>&nbsp;删除</a>
-                    </td>
                 </tr>
                 {/volist}
             </table>

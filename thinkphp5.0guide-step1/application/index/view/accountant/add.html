@@ -19,11 +19,11 @@
                             <!-- Collect the nav links, forms, and other content for toggling -->
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav">
-                                    <li ><a href="{:url('admin_subject/index')}">科目管理</a></li>
-                                    <li class="active"><a href="{:url('admin_accountant/index')}">会计管理</a></li>
+                                    <li class="active"><a href="{:url('accountant/index')}">账单管理</a></li>
+                                    <li ><a href="{:url('accountant_subject/index')}">科目管理</a></li>
                                 </ul>
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li><a href="{:url('admin_center/center')}"><i class="glyphicon glyphicon-user" style="position: relative;top: 2px;"></i>个人中心</a></li>
+                                    <li><a href="{:url('accountant_center/center')}"><i class="glyphicon glyphicon-user" style="position: relative;top: 2px;"></i>个人中心</a></li>
                                     <li><a href="{:url('Login/logout')}">注销</a></li>
                                 </ul>
                             </div>
@@ -40,18 +40,38 @@
             <nav class="navbar navbar-default" role="navigation">
                 <div class="container-fluid">
                     <div style="margin-top: 100px;">          
-                        <form class="form-horizontal" action="{:url('update')}" method="post">
+                        <form class="form-horizontal" action="{:url('save')}" method="post">
                             </div>
                             <div class="col-md-12 form-group">
-                                <label class="col-sm-5 control-label" style="font-size: 20px;">姓名:</label>
+                                <label class="col-sm-5 control-label" style="font-size: 20px;">借:</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="name" value="{$Accountant->name}" class="form-control" />
+                                    <select name="borrow_id" class="form-control" >
+                                        {volist name='Subject->select()' id='Subject'}     
+                                        <option value="{$Subject->getData('id')}" >{$Subject->name}</option>
+                                        {/volist}
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-md-12 form-group">
-                                <label class="col-sm-5 control-label" style="font-size: 20px;">用户名:</label>
+                                <label class="col-sm-5 control-label" style="font-size: 20px;">金额(元):</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="username" value="{$Accountant->username}" class="form-control" />
+                                    <input type="text" name="money" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <label class="col-sm-5 control-label" style="font-size: 20px;">贷:</label>
+                                <div class="col-sm-10">
+                                    <select name="credit_id" class="form-control" >
+                                        {volist name='Subject->select()' id='Subject'}     
+                                        <option value="{$Subject->getData('id')}" >{$Subject->name}</option>
+                                        {/volist}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <label class="col-sm-5 control-label" style="font-size: 20px;">备注:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="note" class="form-control" />
                                 </div>
                             </div>
                             <br>
@@ -65,6 +85,7 @@
                     </div>
                 </div>
             </nav>
+        </div>
         </div>
     </div>
 </body>

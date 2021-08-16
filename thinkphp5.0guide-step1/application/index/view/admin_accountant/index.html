@@ -61,7 +61,7 @@
                     <td>{$key}</td>
                     <td>{$accountant->name}</td>
                     <td>
-                        <a class="btn btn-primary" href="{:url('edit?id=' . $accountant->getData('id'))}"><i class="glyphicon glyphicon-pencil"></i>&nbsp;编辑</a>         
+                        <a class="btn btn-primary" href="{:url('edit?id=' . $accountant->getData('id'))}"><i class="glyphicon glyphicon-pencil"></i>&nbsp;编辑</a> <a class="btn btn-success" href="{:url('resentPassword?id=' . $accountant->getData('id'))}"><i class="glyphicon glyphicon-repeat"></i>&nbsp;重置密码</a>      
                         <a class="btn btn-danger" href="{:url('delete?id='.$accountant->id)}"><i class="glyphicon glyphicon-trash"></i>&nbsp;删除</a>
                     </td>
                 </tr>

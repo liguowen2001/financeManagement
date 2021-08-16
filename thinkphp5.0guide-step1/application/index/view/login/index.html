@@ -1,39 +1,46 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-hans">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
         <title>用户登录</title>
         <link rel="stylesheet" type="text/css" href="/thinkphp5/public/static/bootstrap-3.3.5-dist/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="/MicroCourse2021/thinkphp5.0guide-step1/public/static/css/log.css">
     </head>
     <body>
-        <form class="form-inline"action="{:url('login')}" method="post" id="myform">
-        <div class="login">
-            <h1 ><font color="#CEE3F6 ">梦云智 财务管理</font></h1>
-            <h2>用户登录</h2>
-            <div>
-                <label for="username">用户名:</label>
-                <input class="form-control" type="text" name="username" id="username" required="/" />
-                
-            </div>
-            <br>
-
-            <div >
-                <label for="password">密码:&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                <input class="form-control" type="password" name="password" id="password" required="/" />
-                
-            </div>
-            <br>
-            
-            <a></a>
-            <button type="submit" class="btn btn-info" class="bg-info">登录
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                </button>
-        </form>
+    <div class="row" >
+        <div class="col-md-3"></div>
+        <div class="col-md-6" >
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">梦云智 财务管理</a>
+                    </div>
+                    <div style="margin-top: 100px;">          
+                        <form class="form-horizontal" action="{:url('login')}" method="post">
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <label class="col-sm-5 control-label" style="font-size: 20px;">用户名:</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="test" name="username" />
+                                </div>
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <label class="col-sm-5 control-label" style="font-size: 20px;">密码:</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="password" name="password" />
+                                </div>
+                            </div>
+                            <br>
+                            <div style="margin-left: auto;margin-right: auto; width: 80px">
+                                <div class="form-group " >
+                                    <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-ok"></i>登录</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </nav>
         </div>
+    </div>
     </body>
 </html>
