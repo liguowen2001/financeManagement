@@ -1,9 +1,9 @@
 <?php
 namespace app\index\controller;
-use app\common\model\Admin;
+use app\common\model\Accountant;
 use think\Controller;
 
-class Index extends Controller
+class Index2 extends Controller
 {
     public function index()
     {
@@ -13,10 +13,10 @@ class Index extends Controller
     {
         // 调用父类构造函数(必须)
         parent::__construct();
-
         // 验证用户是否登陆
-        if (!Admin::isLogin()) {
+        if (!Accountant::isLogin()) {
             return $this->error('未检测到登录信息，请重新登录', url('Login/index'));
         }
+
     }
 }

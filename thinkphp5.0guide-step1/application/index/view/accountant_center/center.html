@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+    .main background-color:#f00<title>个人中心</title>
+    </style>
+    <link rel="stylesheet" type="text/css" href="/MicroCourse2021/thinkphp5.0guide-step1/public/static/css/model4.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<out>
+
+<div  class="out">
+    <div class="email"><a href="{:url('accountant_subject/index')}"><font size="3"><button class="btn btn-default col-md-offset-0">返回</font></button></a></div>
+
+<body class="container">
+    <h1 class="head1">个人中心</h1>
+    <div class="in">
+        <ul>
+            <li><font size="5" >姓名：{:$Accountant->name}<td></td></font></li>
+            <br>
+            <li><font size="5" >用户名：{:$Accountant->username}<td></td></font></li>
+        </ul>
+        <br>
+        <div class="col-md-6"><a href="{:url('edit?id=' . $Accountant->getData('id'))}"><button class="btn btn-default "><font size="3">修改密码</font></button></a></div>
+        </div>
+    </div>
+</body>
+</html>
